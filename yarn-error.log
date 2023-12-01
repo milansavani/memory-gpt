@@ -1,0 +1,47 @@
+Arguments: 
+  /Users/dev56/.nvm/versions/node/v16.18.1/bin/node /Users/dev56/.nvm/versions/node/v16.18.1/bin/yarn
+
+PATH: 
+  /Users/dev56/flutter/bin:/Users/dev56/.gem/bin:/Users/dev56/.rvm/gems/ruby-2.7.5/bin:/Users/dev56/.rvm/gems/ruby-2.7.5@global/bin:/Users/dev56/.rvm/rubies/ruby-2.7.5/bin:/Users/dev56/.pyenv/shims:/Users/dev56/.nvm/versions/node/v16.18.1/bin:/opt/homebrew/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/MacGPG2/bin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/dev56/.rvm/bin:/Users/dev56/Library/Android/sdk/emulator:/Users/dev56/Library/Android/sdk/platform-tools:/Users/dev56/bin:/Users/dev56/.rvm/bin:/Users/dev56/mongodb/bin/:/Applications/pgAdmin 4.app/Contents/SharedSupport/
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.18.1
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/dev56/Desktop/Work/dev56/Garreth/memory-gpt/package.json: Unexpected token } in JSON at position 335
+      at JSON.parse (<anonymous>)
+      at /Users/dev56/.nvm/versions/node/v16.18.1/lib/node_modules/yarn/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/Users/dev56/.nvm/versions/node/v16.18.1/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/dev56/.nvm/versions/node/v16.18.1/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "memory-gpt",
+    "private": true,
+    "version": "1.0.0",
+    "scripts": {
+      "develop:backend": "yarn --cwd backend dev",
+      "develop:frontend": "yarn --cwd frontend start",
+      "start": "yarn develop",
+      "preinstall": "cd frontend && yarn install",
+      "postinstall": "husky install && cd backend && yarn install",
+      
+    },
+    "engines": {
+      "npm": "please-use-yarn",
+      "yarn": ">= 1.22.19"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

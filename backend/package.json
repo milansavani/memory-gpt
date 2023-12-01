@@ -1,0 +1,39 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Milan Savani <msavani53@gmail.com>",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "start": "cross-env NODE_ENV=development nodemon index.js",
+    "start:debug": "cross-env NODE_ENV=development nodemon --inspect index.js",
+    "lint:fix": "eslint . --fix",
+    "lint": "eslint ."
+  },
+  "type": "module",
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "child_process": "^1.0.2",
+    "cors": "2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "express-validation": "3.0.8",
+    "http": "^0.0.1-security",
+    "http-status": "^1.6.2",
+    "joi": "17.4.0",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7",
+    "url": "^0.11.3",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.17.0",
+    "eslint": "^8.41.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "nodemon": "2.0.7"
+  }
+}
