@@ -120,7 +120,7 @@ const App = () => {
                   {/* Assuming each item in inputData has a profile image */}
                   <Avatar src='https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png' alt="Profile" />
                 </div>
-                <Typography variant="subtitle1">ChatGPT</Typography>
+                <Typography variant="subtitle1">Memory GPT Bot</Typography>
                 <Typography>{message.data}</Typography>
               </>
             )}
