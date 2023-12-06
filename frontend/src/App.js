@@ -58,7 +58,8 @@ const App = () => {
   }, [socket]);
 
   const connectWS = () => {
-    const newSocket = new WebSocket('ws://localhost:4040');
+    const userId = Date.now();
+    const newSocket = new WebSocket(`ws://localhost:4040/${userId}`);
     setSocket(newSocket);
 
     newSocket.addEventListener('message', (event) => {
@@ -78,7 +79,7 @@ const App = () => {
     // Check if the WebSocket is open before sending data
     if (inputData && inputData.length > 0 && socket && socket.readyState === WebSocket.OPEN) {
       // Convert data to a JSON string before sending
-      const jsonData = JSON.stringify({ inputData });
+      const jsonData = JSON.stringify({ inputData: inputData.trim() });
       socket.send(jsonData);
 
       setMessages((prevMessages) => [
@@ -139,6 +140,7 @@ const App = () => {
               rowsMax={4}
               fullWidth
               onChange={handleInputChange}
+              value={inputData}
           />
         </Grid>
         <Grid xs={1} align="right">
