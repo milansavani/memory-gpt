@@ -28,8 +28,8 @@ const useStyles = makeStyles(() => ({
     }
   },
   avatar: {
-    width: '24px !important',
-    height: '24px !important',
+    width: '28px !important',
+    height: '28px !important',
   },
   messageContainer: {
     display: 'flex'
@@ -135,7 +135,7 @@ const App = () => {
   const Message = ({ message }) => {
     return (
       <Box className={classes.messageContainer}>
-        <Avatar alt={message.type} className={classes.avatar} />
+        <Avatar variant='rounded' alt={message.type} className={classes.avatar} src={message.type === 'input' ? '' : 'https://cdn-icons-png.flaticon.com/512/2068/2068998.png'} />
         <Box className={classes.message}>
           <Typography className={classes.senderName}>{message.type === 'output' ? 'Memory GPT Bot' : 'You'}</Typography>
           <Typography className={classes.messageText}>{message.data}</Typography>
