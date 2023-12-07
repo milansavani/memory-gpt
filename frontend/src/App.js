@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { AppBar, IconButton, Toolbar, InputBase, Typography, Box, Divider, Avatar, Container } from '@mui/material';
+import { AppBar, IconButton, Toolbar, InputBase, Typography, Box, Avatar } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import { makeStyles } from '@mui/styles';
 
