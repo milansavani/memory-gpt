@@ -9,6 +9,7 @@ import { fileURLToPath } from 'url';
 import path from 'path';
 import { WebSocketServer } from 'ws';
 import createPythonScriptManager from './PythonScriptManager.js';
+import httpStatus from 'http-status';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -31,6 +32,8 @@ app.use(cors());
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
+
+app.get('/health-check', (req, res) => res.send('OK'));
 
 // mount all routes on / path
 // app.use('/', routes);
