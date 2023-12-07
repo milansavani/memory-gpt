@@ -1,11 +1,12 @@
 import { spawn } from 'child_process';
 import { EventEmitter } from 'events';
+import config from './config/index.js';
 
 class PythonScriptManager extends EventEmitter {
   constructor(userId, scriptPath) {
     super();
     this.userId = userId;
-    this.pythonScript = spawn('python', [scriptPath]);
+    this.pythonScript = spawn(config.PY_CMD, [scriptPath]);
 
     this.pythonScript.stdout.on('data', (data) => {
       const output = data.toString().trim();

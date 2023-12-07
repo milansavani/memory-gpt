@@ -14,6 +14,8 @@ const envVarsSchema = Joi.object({
     .default(4040),
   WS_PORT: Joi.number()
     .default(4041),
+  PY_CMD: Joi.string()
+    .default('python'),
 }).unknown()
   .required();
 
@@ -26,6 +28,7 @@ const config = {
   env: envVars.NODE_ENV,
   port: envVars.PORT,
   WS_PORT: envVars.WS_PORT,
+  PY_CMD: envVars.PY_CMD,
 };
 
 export default config;
