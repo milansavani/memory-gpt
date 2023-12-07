@@ -98,7 +98,8 @@ const App = () => {
 
   const connectWS = () => {
     const userId = Date.now();
-    const newSocket = new WebSocket(`ws://localhost:4040/${userId}`);
+    console.log('Milan',process.env.REACT_APP_WEBSOCKET_URL);
+    const newSocket = new WebSocket(`${process.env.REACT_APP_WEBSOCKET_URL}${userId}`);
     setSocket(newSocket);
 
     newSocket.addEventListener('message', (event) => {

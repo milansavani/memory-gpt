@@ -12,6 +12,8 @@ const envVarsSchema = Joi.object({
   NODE_ENV: Joi.string().required(),
   PORT: Joi.number()
     .default(4040),
+  WS_PORT: Joi.number()
+    .default(4041),
 }).unknown()
   .required();
 
@@ -23,6 +25,7 @@ if (error) {
 const config = {
   env: envVars.NODE_ENV,
   port: envVars.PORT,
+  WS_PORT: envVars.WS_PORT,
 };
 
 export default config;

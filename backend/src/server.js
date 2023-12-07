@@ -16,7 +16,9 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const server = http.createServer(app)
-const wss = new WebSocketServer({ server });
+const wss = new WebSocketServer({ port: config.WS_PORT }, () => {
+  console.log(`Listening on PORT ${config.WS_PORT} for web sockets`)
+});
 
 if (config.env === 'development') {
   app.use(logger('dev'));
@@ -90,9 +92,7 @@ wss.on('connection', (ws, req) => {
   ws.on('close', () => {
     // Close the associated Python script
     pythonScriptManager.killScript();
-    // pythonScript.kill();
   });
-
 
   // pythonScript handles
   // Handle script output
